@@ -26,6 +26,7 @@ El proyecto utiliza las herramientas más modernas y eficientes del desarrollo w
 *   **Lenguaje:** [TypeScript](https://www.typescript.org/)
 
 ---
+Deploy App : https://breaking-trainning-pro.netlify.app/
 
 ## 📂 Estructura del Proyecto
 
