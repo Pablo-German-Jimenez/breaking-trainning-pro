@@ -39,11 +39,11 @@ export default function UsuariosPage() {
 
   // Lista estática simulada de alumnos para el gimnasio
   const alumnos = [
-    { id: 1, nombre: "Pablo Germán Jiménez", correo: "pablo@fitnesscrew.com", plan: "Pase Libre", estado: "Activo", vencimiento: "10/07/2026" },
-    { id: 2, nombre: "Lucas Benítez", correo: "lucas@fitnesscrew.com", plan: "3 Veces x Semana", estado: "Activo", vencimiento: "04/07/2026" },
-    { id: 3, nombre: "Martina Sola", correo: "martina@fitnesscrew.com", plan: "Pase Libre", estado: "Vencido", vencimiento: "12/06/2026" },
-    { id: 4, nombre: "Alejandro Gómez", correo: "ale.gomez@mail.com", plan: "Pase Diario", estado: "Inactivo", vencimiento: "01/05/2026" },
-    { id: 5, nombre: "Sofía Rodríguez", correo: "sofia.r@mail.com", plan: "Pase Libre", estado: "Activo", vencimiento: "28/07/2026" },
+    { id: 1, nombre: "Break boy Linkin", correo: "bboy.linkin@fitnesscrew.com", plan: "Pase Libre", estado: "Activo", vencimiento: "10/07/2026" },
+    { id: 2, nombre: "Bboy Hong 10", correo: "bboy.hong10@fitnesscrew.com", plan: "3 Veces x Semana", estado: "Activo", vencimiento: "04/07/2026" },
+    { id: 3, nombre: "Bgirl Kate", correo: "bgirl.kate@fitnesscrew.com", plan: "Pase Libre", estado: "Vencido", vencimiento: "12/06/2026" },
+    { id: 4, nombre: "Bboy Lil Amok", correo: "bboy.lilamok@mail.com", plan: "Pase Diario", estado: "Inactivo", vencimiento: "01/05/2026" },
+    { id: 5, nombre: "Bgirl Jazmin", correo: "bgirl.jazmin@mail.com", plan: "Pase Libre", estado: "Activo", vencimiento: "28/07/2026" },
   ];
 
   // Filtrar alumnos dinámicamente según la barra de búsqueda

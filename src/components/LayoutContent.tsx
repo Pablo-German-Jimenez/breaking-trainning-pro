@@ -4,10 +4,10 @@ import { useAuth } from "@/context/providers/AuthContext"; // Ajusta la ruta si 
 
 
 export function LayoutContent({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth(); // Consumimos el estado de autenticación
+  const { user, authLoading } = useAuth(); // Consumimos el estado de autenticación
 
   // 1. Mientras Firebase verifica si hay un usuario, puedes mostrar un spinner o pantalla de carga
-  if (loading) {
+  if (authLoading) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-zinc-950 text-white">
         <p>Cargando panel...</p>
