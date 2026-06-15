@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/context/providers/AuthContext";
+import { AuthProvider } from "@/context/providers/AuthContext"; // Ajustá si tu ruta varía un poco
+import { LayoutContent } from "../components/LayoutContent"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pulse+ Fitness & Wellness",
-  description: "Plataforma premium de fitness, membresías y reservas.",
+  title: "Fitness Crew - Admin",
+  description: "Panel de control de gimnasio",
 };
 
 export default function RootLayout({
@@ -25,9 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} h-full antialiased min-h-full flex flex-col`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-100`}>
+        {/* Envolvemos toda la app con el proveedor de autenticación de Firebase */}
         <AuthProvider>
-          {children}
+          <LayoutContent>{children}</LayoutContent>
         </AuthProvider>
       </body>
     </html>
