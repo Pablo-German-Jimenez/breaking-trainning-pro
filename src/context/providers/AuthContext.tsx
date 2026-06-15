@@ -6,7 +6,7 @@ import { auth } from "../../app/lib/firebase";
 // Definimos los tipos para TypeScript
 interface AuthContextType {
   user: User | null;
-  loading: boolean;
+  authLoading: boolean;
   logout: () => Promise<void>;
 }
 
@@ -32,7 +32,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, logout }}>
+    <AuthContext.Provider value={{ user, authLoading:loading, logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );

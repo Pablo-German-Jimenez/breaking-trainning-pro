@@ -1,6 +1,6 @@
 "use client";
 import {useState} from 'react';
-import {Sidebar} from '@/components/sidebar'
+import Sidebar from '@/components/sidebar'
 import { useAuth } from "@/context/providers/AuthContext";
 import {useRouter}from 'next/navigation'
 import{signOut} from 'firebase/auth'

@@ -9,7 +9,7 @@ import {useRouter} from "next/navigation"
 
 export default function Home() {
   // Traemos los datos globales de autenticación de tu contexto
-  const { user, loading: authLoading } = useAuth();
+  const { user, authLoading: authLoading } = useAuth();
   const router = useRouter();
   // Estados locales exclusivos para el formulario manual
   const [fullName, setFullName] = useState("");

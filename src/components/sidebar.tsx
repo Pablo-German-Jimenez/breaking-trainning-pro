@@ -1,13 +1,13 @@
 'use client'
 import {useState}from 'react'
 import { useAuth } from "@/context/providers/AuthContext"; // Ajusta la ruta si es necesario
-
+import Link from "next/link"
 
 export function LayoutContent({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth(); // Consumimos el estado de autenticación
+  const { user, authLoading } = useAuth(); // Consumimos el estado de autenticación
 
   // 1. Mientras Firebase verifica si hay un usuario, puedes mostrar un spinner o pantalla de carga
-  if (loading) {
+  if (authLoading) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-zinc-950 text-white">
         <p>Cargando panel...</p>
@@ -42,21 +42,22 @@ interface MenuItem {
   id: string;
   label: string;
   icon: React.ComponentType<{ className?: string }>;
+  path:string
 }
 
-export const Sidebar = () => {
+const Sidebar = () => {
   // 2. Estado para saber cuál es la pestaña activa actualmente
   const [activeTab, setActiveTab] = useState<string>('dashboard');
 
   // 3. Array de configuración con las opciones que vimos en tu captura
   const menuItems: MenuItem[] = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'usuarios', label: 'Usuarios', icon: Users },
-    { id: 'reservas', label: 'Reservas', icon: Calendar },
-    { id: 'establecimientos', label: 'Establecimientos', icon: Building2 },
-    { id: 'planes', label: 'Planes', icon: ClipboardList },
-    { id: 'reportes', label: 'Reportes', icon: BarChart3 },
-    { id: 'configuracion', label: 'Configuración', icon: Settings },
+    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, path:'/usuarioadministrador/dashboard' },
+    { id: 'usuarios', label: 'Usuarios', icon: Users,path:'/usuarioadministrador/usuarios' },
+    { id: 'reservas', label: 'Reservas', icon: Calendar ,path:'/usuarioadministrador/reservas'},
+    { id: 'establecimientos', label: 'Establecimientos', icon: Building2 ,path:'/usuarioadministrador/establecimientos'},
+    { id: 'planes', label: 'Planes', icon: ClipboardList ,path:'/usuarioadministrador/planes'},
+    { id: 'reportes', label: 'Reportes', icon: BarChart3 ,path:'/usuarioadministrador/reportes'},
+    { id: 'configuracion', label: 'Configuración', icon: Settings ,path:'/usuarioadministrador/configuracion'},
   ];
 
   return (
@@ -74,8 +75,9 @@ export const Sidebar = () => {
           const isActive = activeTab === item.id;
 
           return (
-            <button
+            <Link
               key={item.id}
+              href={item.path}
               onClick={() => setActiveTab(item.id)} // 5. Al hacer clic, actualizamos el estado
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200
                 ${isActive 
@@ -85,10 +87,11 @@ export const Sidebar = () => {
             >
               <Icon className={`w-5 h-5 ${isActive ? 'text-amber-500' : 'text-gray-500'}`} />
               {item.label}
-            </button>
+            </Link>
           );
         })}
       </nav>
     </div>
   );
 };
+export default Sidebar;
