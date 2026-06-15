@@ -50,15 +50,15 @@ const Sidebar = () => {
   const [activeTab, setActiveTab] = useState<string>('dashboard');
 
   // 3. Array de configuración con las opciones que vimos en tu captura
-  const menuItems: MenuItem[] = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, path:'/usuarioadministrador/dashboard' },
-    { id: 'usuarios', label: 'Usuarios', icon: Users,path:'/usuarioadministrador/usuarios' },
-    { id: 'reservas', label: 'Reservas', icon: Calendar ,path:'/usuarioadministrador/reservas'},
-    { id: 'establecimientos', label: 'Establecimientos', icon: Building2 ,path:'/usuarioadministrador/establecimientos'},
-    { id: 'planes', label: 'Planes', icon: ClipboardList ,path:'/usuarioadministrador/planes'},
-    { id: 'reportes', label: 'Reportes', icon: BarChart3 ,path:'/usuarioadministrador/reportes'},
-    { id: 'configuracion', label: 'Configuración', icon: Settings ,path:'/usuarioadministrador/configuracion'},
-  ];
+const menuItems: MenuItem[] = [
+  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, path: '/usuarioadministrador/dashboard' },
+  { id: 'usuarios', label: 'Usuarios', icon: Users, path: '/usuarioadministrador/usuarios' },
+  { id: 'reservas', label: 'Reservas', icon: Calendar, path: '/usuarioadministrador/reservas' },
+  { id: 'establecimientos', label: 'Establecimientos', icon: Building2, path: '/usuarioadministrador/establecimientos' },
+  { id: 'planes', label: 'Planes', icon: ClipboardList, path: '/usuarioadministrador/planes' },
+  { id: 'reportes', label: 'Reportes', icon: BarChart3, path: '/usuarioadministrador/reportes' },
+  { id: 'configuracion', label: 'Configuración', icon: Settings, path: '/usuarioadministrador/configuracion' },
+];
 
   return (
     <div className="w-64 h-screen bg-[#0d1117] text-gray-400 flex flex-col border-r border-gray-800 p-4">
