@@ -13,7 +13,6 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const SkinnerUser = null;
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -42,7 +41,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error("useAuth debe ser usado dentro de un AuthProvider");
+    throw new Error("useAuth debe ser usado dentro de un AuthProvider pro");
   }
   return context;
 }
